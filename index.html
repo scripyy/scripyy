@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Dots</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" onclick="redirectToDiscord()"></div>
+    <script>
+        function redirectToDiscord() {
+            window.location.href = "https://discord.com/your-discord-link"; // Replace with your actual Discord link
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const container = document.querySelector('.container');
+            for(let i = 0; i < 100; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                dot.style.left = `${Math.random() * 100}vw`;
+                dot.style.animationDuration = `${2 + Math.random() * 3}s`;
+                container.appendChild(dot);
+            }
+        });
+    </script>
+</body>
+</html>
